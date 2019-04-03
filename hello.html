@@ -16,7 +16,7 @@
         render(){
           return (
             <h1>
-              Hello
+              Hello {this.props.name || "User"}
             </h1>
           );
         }
@@ -25,7 +25,8 @@
         render(){
           return (
           <div>
-            <Hello />
+            <Hello name="Omkar"/>
+            <Hello name="Ruchitha"/>
             <Hello />
           </div>
           );
