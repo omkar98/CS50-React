@@ -12,30 +12,38 @@
 
 
     <script type="text/babel">
-      class Hello extends React.Component{
+      class Counter extends React.Component{
+        constructor(props)
+        {
+          super(props);
+          this.state={
+            count: 0
+          }
+        }
         render(){
           return (
+          <div>
             <h1>
-              Hello {this.props.name || "User"}
+              {this.state.count}
             </h1>
+            <button onClick={this.increment}>Increment</button>
+          </div>
           );
+        }
+        increment = () =>{
+          this.setState({
+            count: this.state.count + 1
+          });
         }
       }
       class App extends React.Component{
         render(){
           return (
           <div>
-            <Hello name="Omkar"/>
-            <Hello name="Ruchitha"/>
-            <Hello />
-            <button onClick={this.hello}>Click Here</button>
+            <Counter />
           </div>
           );
         }
-        hello = () => {
-          alert("Hey!");
-        }
-
       }
       ReactDOM.render(<App />, document.querySelector("#app"))
     </script>
