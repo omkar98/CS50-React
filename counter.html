@@ -31,9 +31,9 @@
           );
         }
         increment = () =>{
-          this.setState({
-            count: this.state.count + 1
-          });
+          this.setState(oldState => ({
+            count: oldState.count + 1
+          }));
         }
       }
       class App extends React.Component{
